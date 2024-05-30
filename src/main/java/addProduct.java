@@ -8,8 +8,18 @@ public class addProduct {
         while (true) {
             System.out.println();
             System.out.println("Введите название товара");
-            String product = scanner.nextLine();
-            productsArrayList.add(product);
+
+            boolean checkLine = true;
+
+            while (checkLine) {
+                String product = scanner.nextLine();
+                if (!product.isEmpty()) {
+                    productsArrayList.add(product);
+                    checkLine = false;
+                } else {
+                    System.out.println("Ошибка! Введите название товара");
+                }
+            }
 
             System.out.println("Введите стоимость товара");
             boolean check = true;

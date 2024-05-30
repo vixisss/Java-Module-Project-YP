@@ -12,7 +12,7 @@ public class Main {
 
         while (true){
             int people = addProduct.howManyPeople(scanner);
-            if (people > 1 || people == 1) {
+            if (people > 1) {
 
                 ArrayList<String> productsArrayList = new ArrayList<>(addProduct.addProducts(scanner));
                 showProducts.showAllProducts(productsArrayList);

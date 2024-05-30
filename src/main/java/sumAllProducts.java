@@ -28,21 +28,21 @@ public class sumAllProducts {
                 .mapToDouble(Double::doubleValue)
                 .sum();
 
-
-
         if (sum == 0) {
             System.out.printf("%.2f рублей%n", sum);
         } else {
             double finalSum = sum / people;
-
-
             int roundedNumber = (int) floor(finalSum);
-            String sumFinal = String.valueOf(roundedNumber);
+            String sumFinal = String.valueOf(roundedNumber); //округляем число в меньшую сторону
 
-            int twoLastLetter = sumFinal.length() > 1? sumFinal.length() - 1 : 0;
+            int twoLastLetter = sumFinal.length();
+            String lastLetter = sumFinal.substring(Math.max(0, twoLastLetter-2) ); //находим 2 последние цифры
 
-            String lastLetter = sumFinal.substring(twoLastLetter);
+            String str = "23456789";
+            if(str.contains(String.valueOf(lastLetter.charAt(0)) ))  {
+                lastLetter = lastLetter.substring(1);
 
+            }
 
             switch (lastLetter) {
                 case "1":
